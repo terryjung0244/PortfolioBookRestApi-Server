@@ -25,3 +25,19 @@ export const createAuthor = async (req: Request, res: Response) => {
   }
 }
 
+export const getAllAuthor = async (req: Request, res: Response) => {
+  try {
+    const authorResult = await authorSchema.find();
+    res.status(200).json({
+      statusCode: 200,
+      Message: 'Successfully get All Author From Server',
+      authorResult: authorResult
+    })
+  } catch (err) {
+    res.json({
+      statusCode: 400,
+      message: 'Error from Get All Author From Server',
+      authorResult: null
+    })
+  }
+}
