@@ -16,7 +16,7 @@ const main = async () => {
 
 main();
 
-const app = createServer();
+const app = createServer(); // 이렇게 따로 만든 이유는, 테스팅은 실제 몽고디비를 사용하면 안되기에, 따로 뺐다.
 
 const PORT = process.env.PORT || 8060
 
