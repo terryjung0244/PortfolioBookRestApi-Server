@@ -27,3 +27,21 @@ export const createBook = async(req: Request, res: Response) => {
     })
   }
 }
+
+export const getAllBook = async(req: Request, res: Response) => {
+  try {
+    const newBook = await bookSchema.find();
+    res.json({
+      statusCode: 200,
+      message: 'Successfully recevied GetAllBook',
+      result: newBook // 이부분이 이해가 안감.
+    });
+    
+} catch (err) {
+  res.json({
+    statusCode: 400,
+    message: 'Failed to get GetAllBook',
+    result: null // 이부분이 이해가 안감.
+    })
+  }
+}
